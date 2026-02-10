@@ -1,0 +1,70 @@
+[
+  {
+    "valid": true,
+    "image": "uploads/normal_test_1001.jpg",
+    "grad": "gradcam/grad_normal_test_1001.jpg",
+    "label": "Normal",
+    "confidence": 99.57
+  },
+  {
+    "valid": true,
+    "image": "uploads/mh_test_1001.jpg",
+    "grad": "gradcam/grad_mh_test_1001.jpg",
+    "label": "Macular Hole",
+    "confidence": 99.01
+  },
+  {
+    "valid": true,
+    "image": "uploads/drusen_test_1001.jpg",
+    "grad": "gradcam/grad_drusen_test_1001.jpg",
+    "label": "Drusen",
+    "confidence": 99.43
+  },
+  {
+    "valid": true,
+    "image": "uploads/dr_test_1001.jpg",
+    "grad": "gradcam/grad_dr_test_1001.jpg",
+    "label": "DR",
+    "confidence": 98.23
+  },
+  {
+    "valid": true,
+    "image": "uploads/normal_test_1001.jpg",
+    "grad": "gradcam/grad_normal_test_1001.jpg",
+    "label": "Normal",
+    "confidence": 99.57
+  },
+  {
+    "valid": true,
+    "image": "uploads/mh_test_1001.jpg",
+    "grad": "gradcam/grad_mh_test_1001.jpg",
+    "label": "Macular Hole",
+    "confidence": 99.01
+  },
+  {
+    "valid": true,
+    "image": "uploads/drusen_test_1001.jpg",
+    "grad": "gradcam/grad_drusen_test_1001.jpg",
+    "label": "Drusen",
+    "confidence": 99.43
+  },
+  {
+    "valid": true,
+    "image": "uploads/dr_test_1001.jpg",
+    "grad": "gradcam/grad_dr_test_1001.jpg",
+    "label": "DR",
+    "confidence": 98.23
+  },
+  {
+    "image": "uploads/amd_test_1001.jpg",
+    "grad": "gradcam/grad_amd_test_1001.jpg",
+    "label": "AMD",
+    "confidence": 100.0
+  },
+  {
+    "image": "uploads/amd_test_1001.jpg",
+    "grad": "gradcam/grad_amd_test_1001.jpg",
+    "label": "AMD",
+    "confidence": 100.0
+  }
+]
