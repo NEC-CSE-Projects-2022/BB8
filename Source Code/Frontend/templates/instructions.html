@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center fw-bold mb-5">How to Use RetinaAI System</h3>
+
+<div class="row g-4 justify-content-center">
+
+    <!-- Step 1 -->
+    <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center">
+            <div class="step-icon">📤</div>
+            <h5 class="mt-3">Upload Image</h5>
+            <p>Upload a retinal OCT scan using drag & drop or file selector.</p>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center">
+            <div class="step-icon">🧠</div>
+            <h5 class="mt-3">Validation</h5>
+            <p>AI verifies if the image is a valid retinal OCT scan.</p>
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center">
+            <div class="step-icon">🔬</div>
+            <h5 class="mt-3">Prediction</h5>
+            <p>Model classifies the disease among 8 retinal conditions.</p>
+        </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center">
+            <div class="step-icon">🔥</div>
+            <h5 class="mt-3">Grad-CAM</h5>
+            <p>Heatmap highlights affected regions for explainability.</p>
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="text-center text-muted">
+    <p>
+        Supported diseases: <b>AMD, CNV, CSR, DME, DR, Drusen, Macular Hole, Normal</b>
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center fw-bold mb-4">Batch Retinal Screening</h3>
+
+<div class="row justify-content-center">
+
+<div class="col-lg-6">
+
+<form method="POST" enctype="multipart/form-data" class="card shadow p-4">
+
+    <label class="form-label fw-bold">
+        Upload Multiple OCT Images
+    </label>
+
+    <!-- ✅ FIXED VERSION -->
+    <input type="file"
+           name="images"
+           id="images"
+           accept="image/*"
+           multiple
+           class="form-control mb-3"
+           required>
+
+    <small class="text-muted">
+        Hold CTRL or SHIFT to select multiple files
+    </small>
+
+    <button type="submit" class="btn btn-primary w-100 mt-3">
+        🔬 Run Batch Prediction
+    </button>
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

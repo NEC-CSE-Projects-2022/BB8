@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center mb-3">Prediction: <b>{{ label }}</b></h3>
+<h5 class="text-center mb-4">Confidence: {{ confidence }}%</h5>
+
+<div class="row g-4">
+
+  <!-- Original Image -->
+  <div class="col-md-6">
+    <div class="card shadow-sm image-card">
+      <div class="card-header text-center fw-bold">
+        Original OCT
+      </div>
+      <div class="image-wrapper">
+        <img src="{{ url_for('static', filename=image) }}" class="image-fit">
+      </div>
+    </div>
+  </div>
+
+  <!-- GradCAM -->
+  <div class="col-md-6">
+    <div class="card shadow-sm image-card">
+      <div class="card-header text-center fw-bold">
+        Grad-CAM Heatmap
+      </div>
+      <div class="image-wrapper">
+        <img src="{{ url_for('static', filename=grad) }}" class="image-fit">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

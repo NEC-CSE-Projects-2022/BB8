@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center fw-bold mb-4">📊 Prediction History</h3>
+
+{% if not items %}
+<div class="text-center text-muted mt-5">
+    No predictions yet
+</div>
+{% else %}
+
+<div class="row g-4">
+
+{% for item in items %}
+{% set idx = loop.index0 %}
+
+<div class="col-md-4">
+
+  <div class="card shadow-sm p-2">
+
+    <img src="{{ url_for('static', filename=item.image) }}"
+         class="img-fluid rounded mb-2"
+         style="height:200px; object-fit:cover;">
+
+    <h6 class="text-center">{{ item.label }}</h6>
+
+    <div class="progress mb-2">
+      <div class="progress-bar bg-success"
+           style="width: {{ item.confidence }}%">
+        {{ item.confidence }}%
+      </div>
+    </div>
+
+    <a href="{{ url_for('static', filename=item.grad) }}"
+       class="btn btn-sm btn-primary w-100 mb-2">
+       View Heatmap
+    </a>
+
+    <!-- 🔥 DELETE BUTTON -->
+    <form method="POST"
+          action="{{ url_for('delete_history', index=idx) }}">
+      <button type="submit"
+              class="btn btn-sm btn-danger w-100"
+              onclick="return confirm('Delete this prediction from history?');">
+        🗑 Delete
+      </button>
+    </form>
+
+  </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endblock %}

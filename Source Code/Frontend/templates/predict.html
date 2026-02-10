@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center">
+
+  <div class="col-lg-6 col-md-8">
+
+    <div class="upload-card shadow">
+
+      <h4 class="text-center mb-4 fw-bold">
+        Upload Retinal OCT Image
+      </h4>
+
+      <form method="POST" enctype="multipart/form-data">
+
+        <!-- Drag Drop Zone -->
+        <div class="drop-zone" id="dropZone">
+          <p class="mb-2">📤 Drag & Drop Image Here</p>
+          <small class="text-muted">or click to browse</small>
+          <input type="file" name="image" id="fileInput" hidden required>
+        </div>
+
+        <!-- Preview -->
+        <img id="preview" class="preview-img mt-3"/>
+
+        <button class="btn btn-primary w-100 mt-4">
+          🔬 Predict Disease
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Drag & Drop Script -->
+<script>
+const zone = document.getElementById("dropZone");
+const input = document.getElementById("fileInput");
+const preview = document.getElementById("preview");
+
+zone.onclick = () => input.click();
+
+zone.ondragover = e => {
+  e.preventDefault();
+  zone.classList.add("dragover");
+};
+
+zone.ondragleave = () => zone.classList.remove("dragover");
+
+zone.ondrop = e => {
+  e.preventDefault();
+  input.files = e.dataTransfer.files;
+  showPreview(input.files[0]);
+};
+
+input.onchange = () => showPreview(input.files[0]);
+
+function showPreview(file){
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = "block";
+}
+</script>
+
+{% endblock %}

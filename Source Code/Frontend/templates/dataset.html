@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center mb-4 fw-bold">Retinal OCT Dataset Samples</h3>
+
+<div class="row g-4 justify-content-center">
+
+{% for c in ["AMD","CNV","CSR","DME","DR","Drusen","MH","Normal"] %}
+
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+    <div class="dataset-card shadow-sm">
+
+        <!-- Image -->
+        <div class="dataset-img-wrapper">
+            <img src="{{ url_for('static', filename='dataset_images/'+c+'.jpg') }}" class="dataset-img">
+        </div>
+
+        <!-- Label -->
+        <div class="dataset-body text-center">
+            <span class="badge disease-badge">{{ c }}</span>
+
+            <a href="{{ url_for('static', filename='dataset_images/'+c+'.jpg') }}"
+               download
+               class="btn btn-download mt-3">
+                ⬇ Download
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+</div>
+<div class="hero-section text-center mb-5">
+ <a href="https://www.kaggle.com/datasets/obulisainaren/retinal-oct-c8" class="btn btn-primary btn-lg mt-3 px-4">
+        🚀 Kaggle Dataset 
+    </a>
+    </div>
+
+{% endblock %}

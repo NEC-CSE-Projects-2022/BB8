@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<div class="hero-section text-center mb-5">
+
+    <h1 class="fw-bold hero-title">
+        Retinal Disease Classification using OCT
+    </h1>
+
+    <p class="hero-subtitle mt-3">
+        AI-powered detection of 8 retinal diseases using Deep Learning and Grad-CAM explainability
+    </p>
+
+    <a href="/predict" class="btn btn-primary btn-lg mt-3 px-4">
+        🚀 Start Prediction
+    </a>
+
+</div>
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="row g-4 text-center mb-5">
+
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h5>Deep Learning CNN</h5>
+            <p>Lightweight neural network trained on OCT retinal dataset.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h5>Fast Prediction</h5>
+            <p>Instant disease classification in under a second.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <h5>Grad-CAM Explainability</h5>
+            <p>Visual heatmaps show exactly where the disease is detected.</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ================= WORKFLOW ================= -->
+
+<h4 class="text-center fw-bold mb-4">System Workflow</h4>
+
+<div class="row g-4 text-center">
+
+    <div class="col-md-3">
+        <div class="step-mini">📤<br><small>Upload</small></div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="step-mini">✅<br><small>Validate</small></div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="step-mini">🔬<br><small>Predict</small></div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="step-mini">🔥<br><small>Explain</small></div>
+    </div>
+
+</div>
+
+
+<!-- ================= FOOT NOTE ================= -->
+
+<div class="text-center text-muted mt-5">
+    <p>
+        Supports: AMD • CNV • CSR • DME • DR • Drusen • Macular Hole • Normal
+    </p>
+</div>
+
+{% endblock %}

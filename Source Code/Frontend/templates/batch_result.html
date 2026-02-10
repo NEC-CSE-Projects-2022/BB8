@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center mb-4">Batch Prediction Results</h3>
+
+<div class="row g-4">
+
+{% for r in results %}
+
+<div class="col-md-4">
+
+  <div class="card shadow-sm p-3">
+
+    <!-- Original uploaded image (shown for both valid & invalid) -->
+    <img src="{{ url_for('static', filename=r.image) }}"
+         class="img-fluid rounded mb-2"
+         style="height:200px; object-fit:cover;">
+
+    {% if r.valid %}
+
+      <!-- ✅ VALID (Retinal) Prediction -->
+      <h6 class="text-center fw-bold">{{ r.label }}</h6>
+
+      <div class="progress mb-2">
+        <div class="progress-bar bg-success"
+             style="width: {{ r.confidence }}%">
+          {{ r.confidence }}%
+        </div>
+      </div>
+
+      <!-- GradCAM Heatmap -->
+      <img src="{{ url_for('static', filename=r.grad) }}"
+           class="img-fluid rounded">
+
+    {% else %}
+
+      <!-- ❌ INVALID (Non-retinal) Error message below wrong image -->
+      <div class="alert alert-danger text-center p-2 mb-0">
+        {{ r.message }}
+      </div>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

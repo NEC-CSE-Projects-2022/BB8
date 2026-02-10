@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retinal Disease AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold logo-text" href="/">
+        🧠 RetinaAI
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+
+      <ul class="navbar-nav gap-3 text-center">
+
+        <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/' %}active-link{% endif %}" href="/">
+            <i class="bi bi-house"></i> Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/predict' %}active-link{% endif %}" href="/predict">
+            <i class="bi bi-upload"></i> Prediction
+          </a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/batch' %}active-link{% endif %}" href="/batch">
+            <i class="bi bi-upload"></i> Batch Upload
+          </a>
+        </li>
+    
+    
+
+
+        <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/dataset' %}active-link{% endif %}" href="/dataset">
+            <i class="bi bi-images"></i> Dataset
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/instructions' %}active-link{% endif %}" href="/instructions">
+            <i class="bi bi-list-check"></i> Instructions
+          </a>
+        </li>
+
+        <!-- NEW HISTORY PAGE -->
+        <li class="nav-item">
+          <a class="nav-link nav-custom {% if request.path=='/history' %}active-link{% endif %}" href="/history">
+            <i class="bi bi-clock-history"></i> History
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Dark mode toggle -->
+    <button onclick="toggleDark()" class="btn btn-sm btn-light ms-3">
+        🌙
+    </button>
+
+  </div>
+</nav>
+
+
+
+<!-- ===================================================== -->
+<!-- GLOBAL LOADER (spinner while form submits) -->
+<!-- ===================================================== -->
+
+<div id="globalLoader" class="global-loader" style="display:none;">
+  <div class="spinner-border text-primary"></div>
+  <p class="mt-2">Processing...</p>
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- CONTENT -->
+<!-- ===================================================== -->
+
+<div class="container mt-4">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for cat, msg in messages %}
+<div class="alert alert-{{cat}} shadow-sm">{{msg}}</div>
+{% endfor %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="text-center mt-5 mb-3 text-muted small">
+    © 2026 Retinal Disease Classification using AI | TensorFlow + GradCAM
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- SCRIPTS -->
+<!-- ===================================================== -->
+
+<script>
+/* Dark mode */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+
+/* Global spinner when any form submits */
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("form").forEach(f => {
+        f.onsubmit = () => {
+            document.getElementById("globalLoader").style.display = "flex";
+        };
+    });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
