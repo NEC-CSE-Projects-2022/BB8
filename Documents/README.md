@@ -24,13 +24,13 @@ The system classifies retinal images into **eight clinically relevant categories
 - **CAMERA_READY_PAPER.pdf**  
   Final research paper describing the methodology, dataset, model architecture, experiments, and evaluation results.
 
-- **PROJECT_ABSTRACT.pdf**  
+- **BB8_ABSTRACT.pdf**  
   A concise summary outlining the research problem, proposed solution, and main findings.
 
-- **COLLEGE_REVIEW_PRESENTATION.pptx**  
+- **BB8_COLLEGE_REVIEW.pptx**  
   Presentation used for internal academic project reviews.
 
-- **CONFERENCE_PRESENTATION.ppt / CONFERENCE_PRESENTATION.pptx**  
+- **BB8_CONFERENCE_PPT.ppt / CONFERENCE_PRESENTATION.pptx**  
   Slides prepared for conference presentation and research dissemination.
 
 - **PROJECT_DOCUMENTATION.pdf**  
