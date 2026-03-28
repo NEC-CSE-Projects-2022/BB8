@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td align="center">
-<img src="Datasets/AMD.jpg" width="180"><br>
+<img src="./AMD.jpg" width="180"><br>
 <b>AMD</b>
 </td>
 
@@ -35,7 +35,7 @@
 </td>
 
 <td align="center">
-<img src="Datasets/MH.jpg" width="180"><br>
+<img src="./MH.jpg" width="180"><br>
 <b>MH</b>
 </td>
 
