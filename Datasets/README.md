@@ -8,29 +8,29 @@
 </td>
 
 <td align="center">
-<img src="Datasets/CNV.jpg" width="180"><br>
+<img src="./CNV.jpg" width="180"><br>
 <b>CNV</b>
 </td>
 
 <td align="center">
-<img src="Datasets/CSR.jpg" width="180"><br>
+<img src="./CSR.jpg" width="180"><br>
 <b>CSR</b>
 </td>
 
 <td align="center">
-<img src="Datasets/DME.jpg" width="180"><br>
+<img src="./DME.jpg" width="180"><br>
 <b>DME</b>
 </td>
 </tr>
 
 <tr>
 <td align="center">
-<img src="Datasets/DR.jpg" width="180"><br>
+<img src="./DR.jpg" width="180"><br>
 <b>DR</b>
 </td>
 
 <td align="center">
-<img src="Datasets/Drusen.jpg" width="180"><br>
+<img src="./Drusen.jpg" width="180"><br>
 <b>Drusen</b>
 </td>
 
@@ -40,7 +40,7 @@
 </td>
 
 <td align="center">
-<img src="Datasets/Normal.jpg" width="180"><br>
+<img src="./Normal.jpg" width="180"><br>
 <b>Normal</b>
 </td>
 </tr>
